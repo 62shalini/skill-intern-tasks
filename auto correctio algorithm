@@ -1,0 +1,33 @@
+# Define a dictionary of common misspellings and their corrections
+common_misspellings = {
+    "writting": "writing",
+    "recieve": "receive",
+    "definately": "definitely",
+    "goverment": "government",
+    "occured": "occurred",
+    # Add more misspellings and corrections as needed
+}
+
+def auto_correct_text(text):
+    # Split the input text into words
+    words = text.split()
+
+    # Iterate through the words and correct common misspellings
+    corrected_words = []
+    for word in words:
+        corrected_word = common_misspellings.get(word.lower(), word)
+        corrected_words.append(corrected_word)
+
+    # Join the corrected words back into a corrected text
+    corrected_text = ' '.join(corrected_words)
+
+    return corrected_text
+
+# Get user input
+user_input = input("Enter a text with possible misspellings: ")
+
+# Call the auto_correct_text function to correct misspellings
+corrected_text = auto_correct_text(user_input)
+
+print("Corrected text:")
+print(corrected_text)
